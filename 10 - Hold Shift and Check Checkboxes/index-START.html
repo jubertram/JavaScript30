@@ -97,6 +97,27 @@
   </div>
 
 <script>
+  const allInputs = document.querySelectorAll('input');
+  const inputs = [... allInputs]
+
+
+  function handleCheck(e){
+    if (e.shiftKey && this.checked) {
+      const firstChecked = inputs.findIndex(input => input.checked);
+      const lastChecked = inputs.findLastIndex(input => input.checked);
+      const betweenInputs = inputs.slice((firstChecked + 1), lastChecked);
+      betweenInputs.forEach(input => {
+        input.checked = true;
+      })
+
+    }
+  }
+
+  inputs.forEach(input => {
+    input.addEventListener('click', handleCheck);
+  });
+
+
 </script>
 </body>
 </html>
