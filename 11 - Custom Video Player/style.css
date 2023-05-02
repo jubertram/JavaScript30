@@ -86,6 +86,10 @@ body {
   flex: 1;
 }
 
+.toggle {
+  font-size: 22px;
+}
+
 .progress {
   flex: 10;
   position: relative;
